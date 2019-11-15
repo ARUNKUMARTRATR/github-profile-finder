@@ -2,9 +2,8 @@
 
 <div style="margin: 100px auto;max-width: 400px;">
 <mat-form-field class="example-form-field" style="width: 100%;">
-  <input matInput placeholder="Give Github Username" [(ngModel)]="name">
+  <input matInput placeholder="Give Github Username" [(ngModel)]="name" (keyup.enter)="getting()">
 </mat-form-field>
-
 <button mat-raised-button color="primary" (click)='getting()' style="margin-left:20px;background-color:springgreen;float:right;color:black;"><i>FIND!</i></button>
 
 <mat-spinner *ngIf="isLoading" style="margin-left: 150px;"></mat-spinner>
@@ -15,7 +14,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div style="width: 400px;" *ngIf="imgcard">
+<div style="width: 400px;margin-top: 70px;" *ngIf="imgcard">
   <mat-card class="example-card" style="background-color: rgb(32, 238, 135)">
     <img mat-card-image src="{{Res.avatar_url}}" alt="Photo">
     <mat-card-header>
@@ -32,3 +31,4 @@
   </mat-card>
   </div>
 </div>
+<footer class="footer">&copy;Created By ARUNKUMAR TR @2019</footer>

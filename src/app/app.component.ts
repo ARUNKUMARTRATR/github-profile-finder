@@ -16,7 +16,6 @@ constructor(private http: HttpClient,private snackBar: MatSnackBar){}
   isLoading = false;
   imgcard = false;
   err_msg = false;
-
   getting()
   {
     if(!this.name)
@@ -39,7 +38,7 @@ constructor(private http: HttpClient,private snackBar: MatSnackBar){}
     else
     {
     
-    this.http.get('https://api.github.com/users/'+this.name+'?access_token=d782de35caa995b36a00d4527fe4d5f8fe543db6').subscribe(response =>{this.Res=response;console.log(this.Res);
+    this.http.get('https://api.github.com/users/'+this.name+'?access_token=9b79c88896e643670d61cc6891409cc94bc437ca').subscribe(response =>{this.Res=response;console.log(this.Res);
     
     localStorage.setItem(this.name,JSON.stringify(this.Res));
     this.isLoading = false;
