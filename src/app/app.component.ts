@@ -21,7 +21,8 @@ constructor(private http: HttpClient,private snackBar: MatSnackBar){}
   {
     if(!this.name)
     {
-      return this.snackBar.open("ENTER VALID USER NAME","Ok",{duration:3000,verticalPosition:'top',horizontalPosition:'right'});
+      this.err_msg = false;
+      return this.snackBar.open("ENTER VALID USER NAME","OK",{duration:3000,verticalPosition:'top',horizontalPosition:'right'});
     }
     this.err_msg = false;
     this.isLoading=true;
@@ -48,7 +49,7 @@ constructor(private http: HttpClient,private snackBar: MatSnackBar){}
       this.imgcard=false;
       this.isLoading=false;
       this.err_msg=true;
-      this.snackBar.open("NO USER FOUND!","Ok",{duration:3000,verticalPosition:'top',horizontalPosition:'right'});
+      this.snackBar.open("NO USER FOUND!","OK",{duration:3000,verticalPosition:'top',horizontalPosition:'right'});
     });
 
 
