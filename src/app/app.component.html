@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">GITHUB PROFILE FINDER</mat-toolbar>
+
+<div style="margin: 100px auto;max-width: 400px;">
+<mat-form-field class="example-form-field" style="width: 100%;">
+  <input matInput placeholder="Give Github Username" [(ngModel)]="name">
+  <button mat-raised-button color="primary" (click)='getting()' style="margin-left: 20px;background-color: blue;float:right;">FIND!</button>
+</mat-form-field>
+
+<mat-spinner *ngIf="isLoading" style="margin-left: 150px;"></mat-spinner>
+
+<mat-toolbar color="primary" *ngIf="err_msg" style="margin-top: 20PX;">
+  <mat-toolbar-row>
+    <span>No Data Found</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div style="width: 400px;" *ngIf="imgcard">
+  <mat-card class="example-card" style="background-color: rgb(32, 238, 135)">
+    <img mat-card-image src="{{Res.avatar_url}}" alt="Photo">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      
+      <mat-card-title>{{Res.name| uppercase}}</mat-card-title>
+      <mat-card-subtitle><b> FOLLOWERS: {{Res.followers}}</b></mat-card-subtitle>
+      <mat-card-subtitle><b> EMAIL: {{Res.email}}</b></mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-actions>
+      <a href="{{Res.html_url}}" target="_blank"><button mat-button style="background-color: blue;color: white;">GO TO GITHUB</button></a>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+</div>
