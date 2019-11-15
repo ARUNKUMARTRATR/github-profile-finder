@@ -38,7 +38,7 @@ constructor(private http: HttpClient,private snackBar: MatSnackBar){}
     else
     {
     
-    this.http.get('https://api.github.com/users/'+this.name+'?access_token=9b79c88896e643670d61cc6891409cc94bc437ca').subscribe(response =>{this.Res=response;console.log(this.Res);
+    this.http.get('https://api.github.com/users/'+this.name+'?access_token=8cd696edebea52c7e7652505ddda073f5784182e').subscribe(response =>{this.Res=response;console.log(this.Res);
     
     localStorage.setItem(this.name,JSON.stringify(this.Res));
     this.isLoading = false;
